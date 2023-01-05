@@ -8,7 +8,11 @@ connectButton.onclick = async () => {
     filters: []
   });
   await device.open();
-  console.log(device);
+  console.log("open:", device);
+  await device.selectConfiguration(1);
+  console.log("select config 1:", device);
+  await device.claimInterface(0);
+  console.log("claim interface 0:", device);
   //connected.style.display = 'block';
   //connectButton.style.display = 'none';
   //disconnectButton.style.display = 'initial';
